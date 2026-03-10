@@ -13,3 +13,10 @@ where release_year>2015;
 # Movies from India
 select type,country from netflix_titles_cleaned
 where type='movie' and country='India';
+
+# Top countries producing Netflix content
+SELECT country, COUNT(*) AS total
+FROM  netflix_titles_cleaned
+GROUP BY country
+ORDER BY total DESC;
+
